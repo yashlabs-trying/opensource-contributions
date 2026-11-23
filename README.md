@@ -2,17 +2,17 @@
 
 This repository is a public engineering record of five active upstream pull requests: four to [vLLM](https://github.com/vllm-project/vllm) and one to [SGLang](https://github.com/sgl-project/sglang). It documents the bugs, root causes, fixes, validation, limitations, and reusable lessons behind each contribution.
 
-Status was checked on **2026-10-17**. “Open” means submitted upstream and still under review; it does not mean merged or accepted.
+Status was checked on **2026-11-23** (#59233: 2026-10-17). None is merged yet. “Open” means submitted upstream and still under review; it does not mean merged or accepted.
 
 ## Contribution index
 
 | Project | Pull request | Problem solved | Validation recorded in the PR | Status |
 |---|---|---|---|---|
-| vLLM | [#59028](https://github.com/vllm-project/vllm/pull/59028) | Mooncake state was deleted when a preempted request was re-admitted in the same scheduling step | 47 Mooncake tests + 25 multi-connector tests; Ruff and diff checks passed | Open, mergeable |
-| vLLM | [#59144](https://github.com/vllm-project/vllm/pull/59144) | All-`-inf` logits silently selected token 0 when constraints eliminated every token | 42 sampler + 75 rejection-sampler + 15 GPU-sampler tests; manual Qwen3-0.6B end-to-end check | Open; GitHub reported non-mergeable at snapshot |
-| vLLM | [#59225](https://github.com/vllm-project/vllm/pull/59225) | A malformed Harmony recipient containing `<|channel|>` became a fake tool call | 15 normalization cases plus full parse/streaming cases; 64 Harmony parser tests passed | Open, mergeable |
-| vLLM | [#59233](https://github.com/vllm-project/vllm/pull/59233) | The CUDA WNA16 MoE kernel violated batch-invariant execution through order-dependent atomics | Machine-independent dispatch regression test; normal-mode behavior preserved | Open, mergeable |
-| SGLang | [#41472](https://github.com/sgl-project/sglang/pull/41472) | `request.is_disconnected()` could leak `CancelledError` through the ASGI boundary | Focused disconnect and cancellation regression coverage | Open, mergeable |
+| vLLM | [#59028](https://github.com/vllm-project/vllm/pull/59028) | Mooncake state was deleted when a preempted request was re-admitted in the same scheduling step | 47 Mooncake tests + 25 multi-connector tests; Ruff and diff checks passed | Open; `needs-rebase` (conflicts with main since Nov 15) |
+| vLLM | [#59144](https://github.com/vllm-project/vllm/pull/59144) | All-`-inf` logits silently selected token 0 when constraints eliminated every token | 42 sampler + 75 rejection-sampler + 15 GPU-sampler tests; manual Qwen3-0.6B end-to-end check | Open; `needs-rebase` since Oct 26 |
+| vLLM | [#59225](https://github.com/vllm-project/vllm/pull/59225) | A malformed Harmony recipient containing `<|channel|>` became a fake tool call | 15 normalization cases plus full parse/streaming cases; 64 Harmony parser tests passed | Open; labelled `bug`, `gpt-oss`, `tool-calling`; awaiting maintainer review |
+| vLLM | [#59233](https://github.com/vllm-project/vllm/pull/59233) | The CUDA WNA16 MoE kernel violated batch-invariant execution through order-dependent atomics | Machine-independent dispatch regression test; normal-mode behavior preserved | Open (last checked 2026-10-17) |
+| SGLang | [#41472](https://github.com/sgl-project/sglang/pull/41472) | `request.is_disconnected()` could leak `CancelledError` through the ASGI boundary | Focused disconnect and cancellation regression coverage | Open; 4 code owners requested, awaiting review |
 
 The superseded vLLM PR [#59199](https://github.com/vllm-project/vllm/pull/59199) is part of the process history, but is not counted as a sixth contribution because #59233 replaced it.
 

@@ -15,5 +15,5 @@ The work starts from user-visible failures and traces them to the smallest viola
 
 ## Status note
 
-All four PRs were open on 2026-10-17. #59028, #59225, and #59233 were reported mergeable by GitHub. #59144 was open but reported non-mergeable at the snapshot, so its branch may require upstream reconciliation before review can complete.
+As of 2026-11-23 all four PRs are open and none is merged. #59028 and #59144 carry the `needs-rebase` label and must be rebased onto current `main` before review can finish. #59225 is labelled `bug`/`gpt-oss`/`tool-calling` and awaits maintainer review. #59233 was last checked on 2026-10-17, when GitHub reported it mergeable.
 
