@@ -2,7 +2,7 @@
 
 This repository is a public engineering record of five active upstream pull requests: four to [vLLM](https://github.com/vllm-project/vllm) and one to [SGLang](https://github.com/sgl-project/sglang). It documents the bugs, root causes, fixes, validation, limitations, and reusable lessons behind each contribution.
 
-Status was checked on **2026-11-23** (#59233: 2026-10-17). None is merged yet. “Open” means submitted upstream and still under review; it does not mean merged or accepted.
+Status was checked on **2026-11-23** (#59233: 2026-10-17). None of the PRs checked on that date is merged yet. “Open” means submitted upstream and still under review; it does not mean merged or accepted.
 
 ## Contribution index
 
