@@ -15,5 +15,5 @@ The work starts from user-visible failures and traces them to the smallest viola
 
 ## Status note
 
-As of 2026-11-23 all four PRs are open and none is merged. #59028 and #59144 carry the `needs-rebase` label and must be rebased onto current `main` before review can finish. #59225 is labelled `bug`/`gpt-oss`/`tool-calling` and awaits maintainer review. #59233 was last checked on 2026-10-17, when GitHub reported it mergeable.
+As of 2026-11-23 all four PRs are open and none is merged. #59028 was rebased cleanly onto current `main` on 2026-11-24 (same 207-line change). #59144 still carries `needs-rebase`: upstream deleted `vllm/v1/sample/sampler.py` and `rejection_sampler.py` in a sampler refactor, so the fix has to be ported to the new code path. #59225 is labelled `bug`/`gpt-oss`/`tool-calling` and awaits maintainer review. #59233 was last checked on 2026-10-17, when GitHub reported it mergeable.
 
